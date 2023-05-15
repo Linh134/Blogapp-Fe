@@ -11,23 +11,27 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await axios.post("/user/register", { username, password });
-    const json = await response.data;
-    console.log(json);
+    try {
+      const response = await axios.post("/user/register", {
+        username,
+        password,
+      });
+      const json = await response.data;
 
-    if (!response.status == 200) {
+      if (response.status == 200) {
+        // save the user to local storage
+        localStorage.setItem("user", JSON.stringify(json));
+
+        // update the auth context
+        dispatch({ type: "LOGIN", payload: json });
+
+        // update loading state
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.log(error.response.data.error);
       setIsLoading(false);
-      setError(json.error);
-    }
-    if (response.status == 200) {
-      // save the user to local storage
-      localStorage.setItem("user", JSON.stringify(json));
-
-      // update the auth context
-      dispatch({ type: "LOGIN", payload: json });
-
-      // update loading state
-      setIsLoading(false);
+      setError(error.response.data.error);
     }
   };
 

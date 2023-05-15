@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { useLogin } from "../Hooks/useLogin";
+import { useSignup } from "../Hooks/useSignup";
 import { Link } from "react-router-dom";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
+  const { signup, error, isLoading } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await login(username, password);
+    await signup(username, password);
   };
 
   return (
