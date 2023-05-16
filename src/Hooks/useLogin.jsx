@@ -5,7 +5,7 @@ import axios from "../Components/api";
 export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
-  const { state, dispatch } = useAuthContext();
+  const { dispatch } = useAuthContext();
 
   const login = async (username, password) => {
     setIsLoading(true);
@@ -26,9 +26,9 @@ export const useLogin = () => {
         setIsLoading(false);
       }
     } catch (error) {
-      console.log(error.response.data.error);
+      console.log(error.response.data);
       setIsLoading(false);
-      setError(error.response.data.error);
+      setError(error.response.data);
     }
   };
 

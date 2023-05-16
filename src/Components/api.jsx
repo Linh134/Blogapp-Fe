@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://test-be-production.up.railway.app/api",
+  baseURL: "be-blogapp.up.railway.app/api",
 });
