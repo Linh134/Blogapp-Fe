@@ -49,8 +49,8 @@ const singlePost = () => {
     try {
       await axios(options);
       navigate("/");
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 

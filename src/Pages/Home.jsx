@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { usePostsContext } from "../Hooks/usePostsContext";
 import { useAuthContext } from "../Hooks/useAuthContext";
 import axios from "../Components/api";
-import Detail from "../Components/PostDetail";
+import PostDetail from "../Components/PostDetail";
 
 const Home = () => {
   const { posts, dispatch } = usePostsContext();
@@ -31,7 +31,7 @@ const Home = () => {
     <div className="home-articles max-width-1 m-auto font-primary">
       <p className="font-secondary fs-800 fw-bold">Featured Articles</p>
 
-      {posts && posts.map((post) => <Detail key={post._id} post={post} />)}
+      {posts && posts.map((post) => <PostDetail key={post._id} post={post} />)}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import defaultImg from "../img/defaultImg.jpg";
 import moment from "moment";
 
-const Detail = ({ post }) => {
+const PostDetail = ({ post }) => {
   const getText = (html) => {
     const doc = new DOMParser().parseFromString(html, "text/html");
     return doc.body.textContent;
@@ -35,4 +35,4 @@ const Detail = ({ post }) => {
     </div>
   );
 };
-export default Detail;
+export default PostDetail;
