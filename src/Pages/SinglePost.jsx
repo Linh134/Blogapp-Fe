@@ -67,18 +67,20 @@ const singlePost = () => {
         <div className="blogpost-meta padding-bottom-15">
           <div className="author-info">
             <div className="font-secondary fw-regular fs-500">
-              <b>{`Created by ${user.username} `}</b>
+              <b>{`Created by ${post.author?.username} `}</b>
             </div>
             <div className="font-secondary fw-regular fs-300">
               Posted {moment(post.createdAt).fromNow()}
             </div>
           </div>
-          <div className="social">
-            <Link to={`/create?edit=3`} state={post}>
-              <img src={editpost} alt="" />
-            </Link>
-            <img onClick={handleDelete} src={deletepost} alt="" />
-          </div>
+          {user.username === post.author?.username && (
+            <div className="social">
+              <Link to={`/create?edit=3`} state={post}>
+                <img src={editpost} alt="" />
+              </Link>
+              <img onClick={handleDelete} src={deletepost} alt="" />
+            </div>
+          )}
         </div>
         <div className="font-secondary fw-regular fs-500 line-height-800 ">
           <p>{getText(post.content)}</p>

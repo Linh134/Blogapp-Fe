@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLogout } from "../Hooks/useLogout";
+import { useAuthContext } from "../Hooks/useAuthContext";
 import logo from "../img/logo.jpg";
 
 const Navbar = () => {
   const { logout } = useLogout();
-  let user = {};
-  JSON.parse(localStorage.getItem("user"))
-    ? (user = JSON.parse(localStorage.getItem("user")))
-    : {};
+  const { user } = useAuthContext();
 
   const handleClick = () => {
     logout();
@@ -28,8 +26,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="nav-right fw-regular fs-300">
-        <p>{`Hi ${user.username}`}</p>
+      <div className="nav-right fw-regular fs-400 fw-bold">
+        <p>{`Hi ${user?.username}`}</p>
         <button className="btn" onClick={handleClick}>
           Log out
         </button>

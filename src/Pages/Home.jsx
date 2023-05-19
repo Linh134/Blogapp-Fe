@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <div className="home-articles max-width-1 m-auto font-primary">
-      <p className="font-secondary fs-800 fw-bold">Featured Articles</p>
+      <p className="font-secondary fs-800 fw-bold center">Featured Articles</p>
 
       {posts && posts.map((post) => <PostDetail key={post._id} post={post} />)}
     </div>

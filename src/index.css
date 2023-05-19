@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap");
 :root {
-  --main-bg-color: #3287a9;
+  --main-bg-color: #131516;
+  --main-text-color: #d8d4cf;
+  --main-hover-color: #3287a9;
   --ff-primary: "Be Vietnam Pro", sans-serif;
   --ff-secondary: "Mulish", sans-serif;
 
@@ -14,7 +16,20 @@
   --size-500: 19.6px;
   --size-600: 22px;
   --size-700: 28px;
-  --size-800: 32px;
+  --size-800: 30px;
+}
+
+/* Personal setting follow by dark reader extension */
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
 }
 
 /* Preset  */
@@ -53,10 +68,6 @@
   font-size: var(--size-800);
 }
 
-.center {
-  text-align: center;
-}
-
 .font-primary {
   font-family: var(--ff-primary);
 }
@@ -77,6 +88,10 @@
 
 .max-width-2 {
   max-width: 60vw;
+}
+
+.center {
+  text-align: center;
 }
 
 .m-auto {
@@ -104,7 +119,7 @@
 
 .btn:hover {
   color: white;
-  background: var(--main-bg-color);
+  background: var(--main-hover-color);
 }
 
 .form-input {
@@ -120,7 +135,7 @@ textarea {
   width: 65vw;
   padding: 0px 6px;
   margin: 7px 0;
-  border: 2px solid var(--main-bg-color);
+  border: 2px solid var(--main-hover-color);
   border-radius: 5px;
 }
 
@@ -147,7 +162,7 @@ textarea {
 .nav-left ul {
   display: flex;
   align-items: center;
-  margin: 0 77px;
+  margin: 0 50px;
   padding-bottom: 23px;
 }
 
@@ -159,15 +174,16 @@ textarea {
 
 .nav-left ul li a {
   text-decoration: none;
-  color: black;
+  color: #d8d4cf;
 }
 
 .nav-left ul li a:hover {
-  color: var(--main-bg-color);
+  color: var(--main-hover-color);
 }
 
 .nav-right {
   display: flex;
+  gap: 15px;
 }
 
 .nav-left p,
@@ -237,7 +253,7 @@ bu {
 
 .home-article {
   display: flex;
-  margin: 50px 15px;
+  margin: 50px 0px;
 }
 
 .home-article img {
@@ -252,12 +268,12 @@ bu {
 
 .home-article-content a {
   text-decoration: none;
-  color: black;
+  color: #d8d4cf;
 }
 /* .home-articles{} */
 .footer {
   height: 50px;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-hover-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -306,6 +322,7 @@ bu {
   background-color: white;
   width: 200px;
   gap: 20px;
+  border-radius: 15px;
 }
 .app .container .auth form input {
   padding: 10px;
@@ -327,6 +344,7 @@ bu {
 .app .container .auth form span {
   font-size: 12px;
   text-align: center;
+  color: black;
 }
 
 /* SINGLE POST */
@@ -336,6 +354,7 @@ bu {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  padding-top: 30px;
 }
 .post-img img {
   width: 60%;
@@ -401,7 +420,8 @@ bu {
 
   .home-article-content {
     align-self: center;
-    padding: 0px;
+    padding: 10px;
+    margin-right: 0px;
   }
 
   .home-article img {

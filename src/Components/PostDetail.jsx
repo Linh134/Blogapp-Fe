@@ -24,7 +24,9 @@ const PostDetail = ({ post }) => {
           </Link>
         </div>
         <div className="font-secondary fw-regular fs-300 padding-bottom-10">
-          Posted {moment(post.createdAt).format("MMM Do YY")}
+          {`Created by ${post.author.username} at ${moment(
+            post.createdAt
+          ).format("MMM Do YY")}`}
         </div>
         <Link to={`/post/${post._id}`}>
           <p className="font-secondary fw-regular fs-500 padding-bottom-10 line-height-400">
